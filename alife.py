@@ -16,7 +16,34 @@ Key life lesson: Let curiosity be your guide.
 
 Need to have (x, y) for each animal instead of list (tuple)
 
+NOTES FROM CLASS:
+- rabbits die after 1 generation of not eating
+- foxes should have a starvation level of about 50-100 because there aren't enough rabbits around
+- hunger level representing how many generations that animal has gone without eating
+- starvation level is fixed, hunger level changes
+- starvation level for rabbits = 1
+- reproduction level = how much you need to eat before you can reproduce
+- animals can only reproduce if the amount they have eaten is at least as high as the reproduction level
+- add animal-specific offspring level (max number of offspring for each animal)
+- red field color for fox is superior -- doesn't matter if theres also grass or rabbits
+- need to just use the field for 0s and 1s for grass/no grass
+- add rendering for foxes and rabbits
+- if two rabbits at same location, only one gets grass
+- if two foxes at same location, both get rabbit(s)
+- instead of simply setting field value, we need to build overlay for field, rabbits, and foxes
+- algorithm for foxes and rabbits at same locaiton:
+    - key: coord
+    - value; list of rabbits at that location
 
+    rabbits = [(1, 1), (1, 1), (5, 3)]
+    transform this into a dictionary:
+    (1, 1) --> [r1, r2]
+    (5, 3) --> [r3]
+
+    Along comes a fox at position 1, 1
+    What rabbits does it eat? (What rabbits die?)
+    r1 and r2 are both marked dead
+    fox.eated += 2
 """
 
 import random as rnd
